@@ -16,7 +16,7 @@ script:
     - docker run --rm
       -v /home/travis/build/electronix/encointer-node:/encointer-node
       $DOCKER_IMAGE
-      /bin/bash -c "ls -la /encointer-node"
+      /bin/bash -c "cd /encointer-node && cargo build --release"
 
 env:
     global:
