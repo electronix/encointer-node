@@ -1,5 +1,7 @@
 language: rust
 
+cache: cargo
+
 services:
     - docker
 
@@ -7,10 +9,7 @@ before_install:
     - docker pull $DOCKER_IMAGE
 
 install:
-    - docker run --rm $DOCKER_IMAGE /bin/bash -c "rustup show"
-
-before_script:
-    - readlink -f .travis.yml
+    - docker images
 
 script:
     - docker run --rm
